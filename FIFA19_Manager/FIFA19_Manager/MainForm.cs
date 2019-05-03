@@ -12,9 +12,13 @@ namespace FIFA19_Manager
 {
     public partial class MainForm : Form
     {
+
+        private PlayerBL bl = new PlayerBL();
+
         public MainForm()
         {
             InitializeComponent();
+            bl.load();
         }
 
         private void btAdd_Click(object sender, EventArgs e)
