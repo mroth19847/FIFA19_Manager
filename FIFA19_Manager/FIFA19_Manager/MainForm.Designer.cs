@@ -1,6 +1,6 @@
 ﻿namespace FIFA19_Manager
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.Create = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.btMatch = new System.Windows.Forms.Button();
+            this.btCreate = new System.Windows.Forms.Button();
+            this.tfLV = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.tfIV2 = new System.Windows.Forms.TextBox();
+            this.tfIVR = new System.Windows.Forms.TextBox();
             this.lbIV2 = new System.Windows.Forms.Label();
-            this.tfIV1 = new System.Windows.Forms.TextBox();
+            this.tfIVL = new System.Windows.Forms.TextBox();
             this.lbIV = new System.Windows.Forms.Label();
             this.tfGK = new System.Windows.Forms.TextBox();
             this.lbGK = new System.Windows.Forms.Label();
@@ -42,7 +42,7 @@
             this.btAdd = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.picture = new System.Windows.Forms.PictureBox();
-            this.tfDesign = new System.Windows.Forms.TextBox();
+            this.tfClub = new System.Windows.Forms.TextBox();
             this.tfNation = new System.Windows.Forms.TextBox();
             this.tfName = new System.Windows.Forms.TextBox();
             this.lbClub = new System.Windows.Forms.Label();
@@ -52,85 +52,96 @@
             this.label1 = new System.Windows.Forms.Label();
             this.nation = new System.Windows.Forms.PictureBox();
             this.lbOverall = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tfZDM = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tfZMR = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tfZML = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.tfRV = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.tfST = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.tfRS = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.tfLS = new System.Windows.Forms.TextBox();
             this.lbLS = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nation)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button2
+            // btMatch
             // 
-            this.button2.Location = new System.Drawing.Point(1289, 766);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(236, 79);
-            this.button2.TabIndex = 47;
-            this.button2.Text = "Match";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btMatch.Location = new System.Drawing.Point(1466, 865);
+            this.btMatch.Name = "btMatch";
+            this.btMatch.Size = new System.Drawing.Size(188, 79);
+            this.btMatch.TabIndex = 47;
+            this.btMatch.Text = "Match =>";
+            this.btMatch.UseVisualStyleBackColor = true;
             // 
-            // Create
+            // btCreate
             // 
-            this.Create.Location = new System.Drawing.Point(1031, 766);
-            this.Create.Name = "Create";
-            this.Create.Size = new System.Drawing.Size(236, 79);
-            this.Create.TabIndex = 46;
-            this.Create.Text = "Create Team";
-            this.Create.UseVisualStyleBackColor = true;
+            this.btCreate.Location = new System.Drawing.Point(1113, 865);
+            this.btCreate.Name = "btCreate";
+            this.btCreate.Size = new System.Drawing.Size(225, 79);
+            this.btCreate.TabIndex = 46;
+            this.btCreate.Text = "Create Team";
+            this.btCreate.UseVisualStyleBackColor = true;
             // 
-            // textBox7
+            // tfLV
             // 
-            this.textBox7.Location = new System.Drawing.Point(1089, 258);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(344, 31);
-            this.textBox7.TabIndex = 44;
+            this.tfLV.Location = new System.Drawing.Point(20, 485);
+            this.tfLV.Multiline = true;
+            this.tfLV.Name = "tfLV";
+            this.tfLV.ReadOnly = true;
+            this.tfLV.Size = new System.Drawing.Size(225, 34);
+            this.tfLV.TabIndex = 44;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(1026, 264);
+            this.label11.ForeColor = System.Drawing.Color.AliceBlue;
+            this.label11.Location = new System.Drawing.Point(105, 457);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(38, 25);
             this.label11.TabIndex = 43;
             this.label11.Text = "LV";
             // 
-            // tfIV2
+            // tfIVR
             // 
-            this.tfIV2.Location = new System.Drawing.Point(1089, 203);
-            this.tfIV2.Name = "tfIV2";
-            this.tfIV2.Size = new System.Drawing.Size(344, 31);
-            this.tfIV2.TabIndex = 42;
+            this.tfIVR.Location = new System.Drawing.Point(429, 526);
+            this.tfIVR.Multiline = true;
+            this.tfIVR.Name = "tfIVR";
+            this.tfIVR.ReadOnly = true;
+            this.tfIVR.Size = new System.Drawing.Size(225, 34);
+            this.tfIVR.TabIndex = 42;
             // 
             // lbIV2
             // 
             this.lbIV2.AutoSize = true;
-            this.lbIV2.Location = new System.Drawing.Point(1031, 209);
+            this.lbIV2.ForeColor = System.Drawing.Color.AliceBlue;
+            this.lbIV2.Location = new System.Drawing.Point(530, 494);
             this.lbIV2.Name = "lbIV2";
             this.lbIV2.Size = new System.Drawing.Size(31, 25);
             this.lbIV2.TabIndex = 41;
             this.lbIV2.Text = "IV";
             // 
-            // tfIV1
+            // tfIVL
             // 
-            this.tfIV1.Location = new System.Drawing.Point(1089, 155);
-            this.tfIV1.Name = "tfIV1";
-            this.tfIV1.Size = new System.Drawing.Size(344, 31);
-            this.tfIV1.TabIndex = 40;
+            this.tfIVL.Location = new System.Drawing.Point(197, 526);
+            this.tfIVL.Multiline = true;
+            this.tfIVL.Name = "tfIVL";
+            this.tfIVL.ReadOnly = true;
+            this.tfIVL.Size = new System.Drawing.Size(225, 34);
+            this.tfIVL.TabIndex = 40;
             // 
             // lbIV
             // 
             this.lbIV.AutoSize = true;
-            this.lbIV.Location = new System.Drawing.Point(1031, 161);
+            this.lbIV.ForeColor = System.Drawing.Color.AliceBlue;
+            this.lbIV.Location = new System.Drawing.Point(291, 494);
             this.lbIV.Name = "lbIV";
             this.lbIV.Size = new System.Drawing.Size(31, 25);
             this.lbIV.TabIndex = 39;
@@ -138,15 +149,18 @@
             // 
             // tfGK
             // 
-            this.tfGK.Location = new System.Drawing.Point(1089, 103);
+            this.tfGK.Location = new System.Drawing.Point(307, 631);
+            this.tfGK.Multiline = true;
             this.tfGK.Name = "tfGK";
-            this.tfGK.Size = new System.Drawing.Size(344, 31);
+            this.tfGK.ReadOnly = true;
+            this.tfGK.Size = new System.Drawing.Size(225, 34);
             this.tfGK.TabIndex = 38;
             // 
             // lbGK
             // 
             this.lbGK.AutoSize = true;
-            this.lbGK.Location = new System.Drawing.Point(1020, 106);
+            this.lbGK.ForeColor = System.Drawing.Color.AliceBlue;
+            this.lbGK.Location = new System.Drawing.Point(392, 603);
             this.lbGK.Name = "lbGK";
             this.lbGK.Size = new System.Drawing.Size(42, 25);
             this.lbGK.TabIndex = 37;
@@ -156,7 +170,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(1183, 34);
+            this.label7.Location = new System.Drawing.Point(1185, 34);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(117, 42);
             this.label7.TabIndex = 36;
@@ -188,12 +202,12 @@
             this.picture.TabIndex = 33;
             this.picture.TabStop = false;
             // 
-            // tfDesign
+            // tfClub
             // 
-            this.tfDesign.Location = new System.Drawing.Point(135, 237);
-            this.tfDesign.Name = "tfDesign";
-            this.tfDesign.Size = new System.Drawing.Size(344, 31);
-            this.tfDesign.TabIndex = 31;
+            this.tfClub.Location = new System.Drawing.Point(135, 237);
+            this.tfClub.Name = "tfClub";
+            this.tfClub.Size = new System.Drawing.Size(344, 31);
+            this.tfClub.TabIndex = 31;
             // 
             // tfNation
             // 
@@ -271,154 +285,184 @@
             this.lbOverall.Size = new System.Drawing.Size(0, 25);
             this.lbOverall.TabIndex = 49;
             // 
-            // textBox1
+            // tfZDM
             // 
-            this.textBox1.Location = new System.Drawing.Point(1089, 471);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(344, 31);
-            this.textBox1.TabIndex = 57;
+            this.tfZDM.Location = new System.Drawing.Point(307, 384);
+            this.tfZDM.Multiline = true;
+            this.tfZDM.Name = "tfZDM";
+            this.tfZDM.ReadOnly = true;
+            this.tfZDM.Size = new System.Drawing.Size(225, 34);
+            this.tfZDM.TabIndex = 57;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1009, 477);
+            this.label2.ForeColor = System.Drawing.Color.AliceBlue;
+            this.label2.Location = new System.Drawing.Point(392, 356);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 25);
             this.label2.TabIndex = 56;
             this.label2.Text = "ZDM";
             // 
-            // textBox2
+            // tfZMR
             // 
-            this.textBox2.Location = new System.Drawing.Point(1089, 416);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(344, 31);
-            this.textBox2.TabIndex = 55;
+            this.tfZMR.Location = new System.Drawing.Point(493, 286);
+            this.tfZMR.Multiline = true;
+            this.tfZMR.Name = "tfZMR";
+            this.tfZMR.ReadOnly = true;
+            this.tfZMR.Size = new System.Drawing.Size(225, 34);
+            this.tfZMR.TabIndex = 55;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1021, 422);
+            this.label3.ForeColor = System.Drawing.Color.AliceBlue;
+            this.label3.Location = new System.Drawing.Point(586, 258);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 25);
             this.label3.TabIndex = 54;
             this.label3.Text = "ZM";
             // 
-            // textBox3
+            // tfZML
             // 
-            this.textBox3.Location = new System.Drawing.Point(1089, 368);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(344, 31);
-            this.textBox3.TabIndex = 53;
+            this.tfZML.Location = new System.Drawing.Point(129, 286);
+            this.tfZML.Multiline = true;
+            this.tfZML.Name = "tfZML";
+            this.tfZML.ReadOnly = true;
+            this.tfZML.Size = new System.Drawing.Size(225, 34);
+            this.tfZML.TabIndex = 53;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1021, 374);
+            this.label4.ForeColor = System.Drawing.Color.AliceBlue;
+            this.label4.Location = new System.Drawing.Point(223, 258);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 25);
             this.label4.TabIndex = 52;
             this.label4.Text = "ZM";
             // 
-            // textBox8
+            // tfRV
             // 
-            this.textBox8.Location = new System.Drawing.Point(1089, 316);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(344, 31);
-            this.textBox8.TabIndex = 51;
+            this.tfRV.Location = new System.Drawing.Point(601, 486);
+            this.tfRV.Multiline = true;
+            this.tfRV.Name = "tfRV";
+            this.tfRV.ReadOnly = true;
+            this.tfRV.Size = new System.Drawing.Size(225, 34);
+            this.tfRV.TabIndex = 51;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1021, 322);
+            this.label5.ForeColor = System.Drawing.Color.AliceBlue;
+            this.label5.Location = new System.Drawing.Point(705, 458);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 25);
             this.label5.TabIndex = 50;
             this.label5.Text = "RV";
             // 
-            // textBox9
+            // tfST
             // 
-            this.textBox9.Location = new System.Drawing.Point(1089, 621);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(344, 31);
-            this.textBox9.TabIndex = 63;
+            this.tfST.Location = new System.Drawing.Point(307, 108);
+            this.tfST.Multiline = true;
+            this.tfST.Name = "tfST";
+            this.tfST.ReadOnly = true;
+            this.tfST.Size = new System.Drawing.Size(225, 34);
+            this.tfST.TabIndex = 63;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(1025, 621);
+            this.label12.ForeColor = System.Drawing.Color.AliceBlue;
+            this.label12.Location = new System.Drawing.Point(411, 80);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(39, 25);
             this.label12.TabIndex = 62;
             this.label12.Text = "ST";
             // 
-            // textBox10
+            // tfRS
             // 
-            this.textBox10.Location = new System.Drawing.Point(1089, 566);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(344, 31);
-            this.textBox10.TabIndex = 61;
+            this.tfRS.Location = new System.Drawing.Point(554, 148);
+            this.tfRS.Multiline = true;
+            this.tfRS.Name = "tfRS";
+            this.tfRS.ReadOnly = true;
+            this.tfRS.Size = new System.Drawing.Size(225, 34);
+            this.tfRS.TabIndex = 61;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(1023, 572);
+            this.label13.ForeColor = System.Drawing.Color.AliceBlue;
+            this.label13.Location = new System.Drawing.Point(655, 117);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(41, 25);
             this.label13.TabIndex = 60;
             this.label13.Text = "RS";
             // 
-            // textBox11
+            // tfLS
             // 
-            this.textBox11.Location = new System.Drawing.Point(1089, 518);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(344, 31);
-            this.textBox11.TabIndex = 59;
+            this.tfLS.Location = new System.Drawing.Point(55, 139);
+            this.tfLS.Multiline = true;
+            this.tfLS.Name = "tfLS";
+            this.tfLS.ReadOnly = true;
+            this.tfLS.Size = new System.Drawing.Size(225, 34);
+            this.tfLS.TabIndex = 59;
             // 
             // lbLS
             // 
             this.lbLS.AutoSize = true;
-            this.lbLS.Location = new System.Drawing.Point(1026, 524);
+            this.lbLS.ForeColor = System.Drawing.Color.AliceBlue;
+            this.lbLS.Location = new System.Drawing.Point(152, 108);
             this.lbLS.Name = "lbLS";
             this.lbLS.Size = new System.Drawing.Size(38, 25);
             this.lbLS.TabIndex = 58;
             this.lbLS.Text = "LS";
             // 
-            // Form1
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Green;
+            this.panel1.Controls.Add(this.tfRV);
+            this.panel1.Controls.Add(this.tfST);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.lbGK);
+            this.panel1.Controls.Add(this.tfRS);
+            this.panel1.Controls.Add(this.tfGK);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.lbIV);
+            this.panel1.Controls.Add(this.tfLS);
+            this.panel1.Controls.Add(this.tfIVL);
+            this.panel1.Controls.Add(this.lbLS);
+            this.panel1.Controls.Add(this.lbIV2);
+            this.panel1.Controls.Add(this.tfZDM);
+            this.panel1.Controls.Add(this.tfIVR);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.tfZMR);
+            this.panel1.Controls.Add(this.tfLV);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.tfZML);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Location = new System.Drawing.Point(806, 147);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(848, 698);
+            this.panel1.TabIndex = 64;
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1566, 878);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.lbLS);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.label5);
+            this.ClientSize = new System.Drawing.Size(1666, 959);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbOverall);
             this.Controls.Add(this.nation);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.Create);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.tfIV2);
-            this.Controls.Add(this.lbIV2);
-            this.Controls.Add(this.tfIV1);
-            this.Controls.Add(this.lbIV);
-            this.Controls.Add(this.tfGK);
-            this.Controls.Add(this.lbGK);
+            this.Controls.Add(this.btMatch);
+            this.Controls.Add(this.btCreate);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btAdd);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.picture);
-            this.Controls.Add(this.tfDesign);
+            this.Controls.Add(this.tfClub);
             this.Controls.Add(this.tfNation);
             this.Controls.Add(this.tfName);
             this.Controls.Add(this.lbClub);
@@ -426,10 +470,12 @@
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.liPlayer);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "FIFA 19 Manager";
             ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nation)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -437,13 +483,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button Create;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Button btMatch;
+        private System.Windows.Forms.Button btCreate;
+        private System.Windows.Forms.TextBox tfLV;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox tfIV2;
+        private System.Windows.Forms.TextBox tfIVR;
         private System.Windows.Forms.Label lbIV2;
-        private System.Windows.Forms.TextBox tfIV1;
+        private System.Windows.Forms.TextBox tfIVL;
         private System.Windows.Forms.Label lbIV;
         private System.Windows.Forms.TextBox tfGK;
         private System.Windows.Forms.Label lbGK;
@@ -451,7 +497,7 @@
         private System.Windows.Forms.Button btAdd;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox picture;
-        private System.Windows.Forms.TextBox tfDesign;
+        private System.Windows.Forms.TextBox tfClub;
         private System.Windows.Forms.TextBox tfNation;
         private System.Windows.Forms.TextBox tfName;
         private System.Windows.Forms.Label lbClub;
@@ -461,20 +507,21 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox nation;
         private System.Windows.Forms.Label lbOverall;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tfZDM;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tfZMR;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tfZML;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox tfRV;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox tfST;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox tfRS;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox tfLS;
         private System.Windows.Forms.Label lbLS;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
