@@ -67,6 +67,7 @@
             this.tfLS = new System.Windows.Forms.TextBox();
             this.lbLS = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbNationality = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nation)).BeginInit();
             this.panel1.SuspendLayout();
@@ -178,12 +179,13 @@
             // 
             // btAdd
             // 
-            this.btAdd.Location = new System.Drawing.Point(531, 672);
+            this.btAdd.Location = new System.Drawing.Point(531, 766);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(204, 79);
             this.btAdd.TabIndex = 35;
             this.btAdd.Text = "Add =>";
             this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // label6
             // 
@@ -273,16 +275,15 @@
             // 
             this.nation.Location = new System.Drawing.Point(560, 554);
             this.nation.Name = "nation";
-            this.nation.Size = new System.Drawing.Size(139, 51);
+            this.nation.Size = new System.Drawing.Size(139, 112);
             this.nation.TabIndex = 48;
             this.nation.TabStop = false;
             // 
             // lbOverall
             // 
-            this.lbOverall.AutoSize = true;
-            this.lbOverall.Location = new System.Drawing.Point(622, 621);
+            this.lbOverall.Location = new System.Drawing.Point(511, 723);
             this.lbOverall.Name = "lbOverall";
-            this.lbOverall.Size = new System.Drawing.Size(0, 25);
+            this.lbOverall.Size = new System.Drawing.Size(250, 40);
             this.lbOverall.TabIndex = 49;
             // 
             // tfZDM
@@ -448,11 +449,19 @@
             this.panel1.Size = new System.Drawing.Size(848, 698);
             this.panel1.TabIndex = 64;
             // 
+            // lbNationality
+            // 
+            this.lbNationality.Location = new System.Drawing.Point(511, 673);
+            this.lbNationality.Name = "lbNationality";
+            this.lbNationality.Size = new System.Drawing.Size(250, 40);
+            this.lbNationality.TabIndex = 65;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1666, 959);
+            this.Controls.Add(this.lbNationality);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbOverall);
             this.Controls.Add(this.nation);
@@ -522,6 +531,7 @@
         private System.Windows.Forms.TextBox tfLS;
         private System.Windows.Forms.Label lbLS;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lbNationality;
     }
 }
 

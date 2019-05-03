@@ -17,5 +17,9 @@ namespace FIFA19_Manager
             InitializeComponent();
         }
 
+        private void btAdd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
