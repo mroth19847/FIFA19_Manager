@@ -24,7 +24,7 @@ namespace FIFA19_Manager
                 bl.load();
             } catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message+"\n"+ex.StackTrace);
             }
         }
 
@@ -34,6 +34,11 @@ namespace FIFA19_Manager
         }
 
         private void btMatch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btCreate_Click(object sender, EventArgs e)
         {
 
         }

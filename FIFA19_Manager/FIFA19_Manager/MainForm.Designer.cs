@@ -93,6 +93,7 @@ namespace FIFA19_Manager
             this.btCreate.TabIndex = 46;
             this.btCreate.Text = "Create Team";
             this.btCreate.UseVisualStyleBackColor = true;
+            this.btCreate.Click += new System.EventHandler(this.btCreate_Click);
             // 
             // tfLV
             // 
@@ -447,9 +448,9 @@ namespace FIFA19_Manager
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.tfZML);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(806, 147);
+            this.panel1.Location = new System.Drawing.Point(806, 106);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(848, 698);
+            this.panel1.Size = new System.Drawing.Size(848, 739);
             this.panel1.TabIndex = 64;
             // 
             // lbNationality
@@ -463,7 +464,7 @@ namespace FIFA19_Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 467);
+            this.ClientSize = new System.Drawing.Size(1774, 1004);
             this.Controls.Add(this.lbNationality);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbOverall);

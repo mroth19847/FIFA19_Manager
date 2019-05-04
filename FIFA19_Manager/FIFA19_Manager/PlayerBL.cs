@@ -38,15 +38,15 @@ namespace FIFA19_Manager
                             Name = parts[2],
                             PhotoURL = parts[4],
                             Nationality = parts[5],
-                            Overall = Convert.ToInt32(parts[7]),
-                            STval = Convert.ToInt32(parts[29]),
-                            LSval = Convert.ToInt32(parts[28]),
-                            RSval = Convert.ToInt32(parts[30]),
-                            ZMval = Convert.ToInt32(parts[41]),
-                            ZDMval = Convert.ToInt32(parts[46]),
-                            RVval = Convert.ToInt32(parts[53]),
-                            LVval = Convert.ToInt32(parts[49]),
-                            IVval = Convert.ToInt32(parts[51])
+                            Overall = getPositionValue(parts[7]),
+                            STval = getPositionValue(parts[30]),
+                            LSval = getPositionValue(parts[29]),
+                            RSval = getPositionValue(parts[31]),
+                            ZMval = getPositionValue(parts[42]),
+                            ZDMval = getPositionValue(parts[47]),
+                            RVval = getPositionValue(parts[54]),
+                            LVval = getPositionValue(parts[50]),
+                            IVval = getPositionValue(parts[52])
                         };
 
                         if (parts[21].Equals("GK"))
@@ -62,11 +62,25 @@ namespace FIFA19_Manager
                     }
                 }
                 update();
+            
             }
             catch (FileNotFoundException)
             {
                 throw new Exception("The program failed to read the player data. Please restart and try again!");
             }
+        }
+
+        private int getPositionValue(string pos)
+        {
+            if (pos.Equals(""))
+            {
+                return 0;
+            } else if (pos.Contains("+"))
+            {
+                string[] parts = pos.Split('+');
+                return Convert.ToInt32(parts[0]) + Convert.ToInt32(parts[1]);
+            }
+            return Convert.ToInt32(pos);
         }
 
         public void filter(string name, string nation, string club)
