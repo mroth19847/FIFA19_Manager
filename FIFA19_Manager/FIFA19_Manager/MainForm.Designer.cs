@@ -42,17 +42,16 @@ namespace FIFA19_Manager
             this.lbGK = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btAdd = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.picture = new System.Windows.Forms.PictureBox();
             this.tfClub = new System.Windows.Forms.TextBox();
             this.tfNation = new System.Windows.Forms.TextBox();
             this.tfName = new System.Windows.Forms.TextBox();
             this.lbClub = new System.Windows.Forms.Label();
             this.lbNation = new System.Windows.Forms.Label();
-            this.lbName = new System.Windows.Forms.Label();
+            this.lbnam = new System.Windows.Forms.Label();
             this.liPlayer = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.nation = new System.Windows.Forms.PictureBox();
+            this.club = new System.Windows.Forms.PictureBox();
             this.lbOverall = new System.Windows.Forms.Label();
             this.tfZDM = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -70,9 +69,12 @@ namespace FIFA19_Manager
             this.lbLS = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbNationality = new System.Windows.Forms.Label();
+            this.PlayerPanel = new System.Windows.Forms.Panel();
+            this.lbName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.club)).BeginInit();
             this.panel1.SuspendLayout();
+            this.PlayerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // btMatch
@@ -191,20 +193,13 @@ namespace FIFA19_Manager
             this.btAdd.UseVisualStyleBackColor = true;
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(596, 308);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 25);
-            this.label6.TabIndex = 34;
-            this.label6.Text = "Picture";
-            // 
             // picture
             // 
-            this.picture.Location = new System.Drawing.Point(531, 350);
+            this.picture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picture.Location = new System.Drawing.Point(21, 9);
             this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(204, 198);
+            this.picture.Size = new System.Drawing.Size(245, 72);
+            this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picture.TabIndex = 33;
             this.picture.TabStop = false;
             // 
@@ -250,14 +245,14 @@ namespace FIFA19_Manager
             this.lbNation.TabIndex = 27;
             this.lbNation.Text = "Nation";
             // 
-            // lbName
+            // lbnam
             // 
-            this.lbName.AutoSize = true;
-            this.lbName.Location = new System.Drawing.Point(42, 109);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(68, 25);
-            this.lbName.TabIndex = 26;
-            this.lbName.Text = "Name";
+            this.lbnam.AutoSize = true;
+            this.lbnam.Location = new System.Drawing.Point(42, 109);
+            this.lbnam.Name = "lbnam";
+            this.lbnam.Size = new System.Drawing.Size(68, 25);
+            this.lbnam.TabIndex = 26;
+            this.lbnam.Text = "Name";
             // 
             // liPlayer
             // 
@@ -267,6 +262,7 @@ namespace FIFA19_Manager
             this.liPlayer.Name = "liPlayer";
             this.liPlayer.Size = new System.Drawing.Size(441, 529);
             this.liPlayer.TabIndex = 25;
+            this.liPlayer.SelectedIndexChanged += new System.EventHandler(this.liPlayer_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -278,20 +274,23 @@ namespace FIFA19_Manager
             this.label1.TabIndex = 24;
             this.label1.Text = "Player";
             // 
-            // nation
+            // club
             // 
-            this.nation.Location = new System.Drawing.Point(560, 554);
-            this.nation.Name = "nation";
-            this.nation.Size = new System.Drawing.Size(139, 112);
-            this.nation.TabIndex = 48;
-            this.nation.TabStop = false;
+            this.club.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.club.Location = new System.Drawing.Point(21, 87);
+            this.club.Name = "club";
+            this.club.Size = new System.Drawing.Size(245, 68);
+            this.club.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.club.TabIndex = 48;
+            this.club.TabStop = false;
             // 
             // lbOverall
             // 
-            this.lbOverall.Location = new System.Drawing.Point(511, 723);
+            this.lbOverall.Location = new System.Drawing.Point(16, 208);
             this.lbOverall.Name = "lbOverall";
             this.lbOverall.Size = new System.Drawing.Size(250, 40);
             this.lbOverall.TabIndex = 49;
+            this.lbOverall.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tfZDM
             // 
@@ -458,32 +457,50 @@ namespace FIFA19_Manager
             // 
             // lbNationality
             // 
-            this.lbNationality.Location = new System.Drawing.Point(511, 673);
+            this.lbNationality.Location = new System.Drawing.Point(16, 248);
             this.lbNationality.Name = "lbNationality";
             this.lbNationality.Size = new System.Drawing.Size(250, 40);
             this.lbNationality.TabIndex = 65;
+            this.lbNationality.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // PlayerPanel
+            // 
+            this.PlayerPanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.PlayerPanel.Controls.Add(this.lbName);
+            this.PlayerPanel.Controls.Add(this.picture);
+            this.PlayerPanel.Controls.Add(this.lbNationality);
+            this.PlayerPanel.Controls.Add(this.club);
+            this.PlayerPanel.Controls.Add(this.lbOverall);
+            this.PlayerPanel.Location = new System.Drawing.Point(492, 446);
+            this.PlayerPanel.Name = "PlayerPanel";
+            this.PlayerPanel.Size = new System.Drawing.Size(282, 314);
+            this.PlayerPanel.TabIndex = 66;
+            // 
+            // lbName
+            // 
+            this.lbName.Location = new System.Drawing.Point(16, 164);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(250, 40);
+            this.lbName.TabIndex = 66;
+            this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 467);
-            this.Controls.Add(this.lbNationality);
+            this.ClientSize = new System.Drawing.Size(1115, 985);
+            this.Controls.Add(this.PlayerPanel);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lbOverall);
-            this.Controls.Add(this.nation);
             this.Controls.Add(this.btMatch);
             this.Controls.Add(this.btCreate);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btAdd);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.picture);
             this.Controls.Add(this.tfClub);
             this.Controls.Add(this.tfNation);
             this.Controls.Add(this.tfName);
             this.Controls.Add(this.lbClub);
             this.Controls.Add(this.lbNation);
-            this.Controls.Add(this.lbName);
+            this.Controls.Add(this.lbnam);
             this.Controls.Add(this.liPlayer);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -492,10 +509,12 @@ namespace FIFA19_Manager
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FIFA 19 Manager";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DeletePictures);
             ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.club)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.PlayerPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
             this.Width = 853;
@@ -520,17 +539,16 @@ namespace FIFA19_Manager
         private System.Windows.Forms.Label lbGK;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btAdd;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox picture;
         private System.Windows.Forms.TextBox tfClub;
         private System.Windows.Forms.TextBox tfNation;
         private System.Windows.Forms.TextBox tfName;
         private System.Windows.Forms.Label lbClub;
         private System.Windows.Forms.Label lbNation;
-        private System.Windows.Forms.Label lbName;
+        private System.Windows.Forms.Label lbnam;
         private System.Windows.Forms.ListBox liPlayer;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox nation;
+        private System.Windows.Forms.PictureBox club;
         private System.Windows.Forms.Label lbOverall;
         private System.Windows.Forms.TextBox tfZDM;
         private System.Windows.Forms.Label label2;
@@ -548,6 +566,8 @@ namespace FIFA19_Manager
         private System.Windows.Forms.Label lbLS;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbNationality;
+        private Panel PlayerPanel;
+        private Label lbName;
     }
 }
 

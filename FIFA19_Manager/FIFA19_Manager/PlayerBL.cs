@@ -19,6 +19,11 @@ namespace FIFA19_Manager
             this.ListB = listB;
         }
 
+        public Player getPlayerAtIndex(int i)
+        {
+            return filtered[i];
+        }
+
         public void load()
         {
             try
@@ -40,6 +45,7 @@ namespace FIFA19_Manager
                             PhotoURL = parts[4],
                             Nationality = parts[5],
                             Club = parts[9],
+                            ClubURL = parts[10],
                             Overall = getPositionValue(parts[7]),
                             STval = getPositionValue(parts[30]),
                             LSval = getPositionValue(parts[29]),
