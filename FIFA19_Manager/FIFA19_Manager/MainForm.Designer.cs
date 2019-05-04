@@ -214,6 +214,7 @@ namespace FIFA19_Manager
             this.tfClub.Name = "tfClub";
             this.tfClub.Size = new System.Drawing.Size(344, 31);
             this.tfClub.TabIndex = 31;
+            this.tfClub.TextChanged += new System.EventHandler(this.btClub_TextChanged);
             // 
             // tfNation
             // 
@@ -221,6 +222,7 @@ namespace FIFA19_Manager
             this.tfNation.Name = "tfNation";
             this.tfNation.Size = new System.Drawing.Size(344, 31);
             this.tfNation.TabIndex = 30;
+            this.tfNation.TextChanged += new System.EventHandler(this.btNation_TextChanged);
             // 
             // tfName
             // 
@@ -228,6 +230,7 @@ namespace FIFA19_Manager
             this.tfName.Name = "tfName";
             this.tfName.Size = new System.Drawing.Size(344, 31);
             this.tfName.TabIndex = 29;
+            this.tfName.TextChanged += new System.EventHandler(this.btName_TextChanged);
             // 
             // lbClub
             // 
@@ -464,7 +467,7 @@ namespace FIFA19_Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1774, 1004);
+            this.ClientSize = new System.Drawing.Size(827, 467);
             this.Controls.Add(this.lbNationality);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbOverall);

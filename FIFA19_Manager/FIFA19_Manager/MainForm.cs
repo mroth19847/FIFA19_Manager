@@ -42,5 +42,20 @@ namespace FIFA19_Manager
         {
 
         }
+
+        private void btName_TextChanged(object sender, EventArgs e)
+        {
+            bl.filter(tfName.Text, tfNation.Text, tfClub.Text);
+        }
+
+        private void btNation_TextChanged(object sender, EventArgs e)
+        {
+            bl.filter(tfName.Text, tfNation.Text, tfClub.Text);
+        }
+
+        private void btClub_TextChanged(object sender, EventArgs e)
+        {
+            bl.filter(tfName.Text, tfNation.Text, tfClub.Text);
+        }
     }
 }

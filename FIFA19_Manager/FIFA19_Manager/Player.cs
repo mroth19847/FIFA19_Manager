@@ -20,6 +20,8 @@ namespace FIFA19_Manager
 
         public string ClubURL { get; set; }
 
+        public string Club { get; set; }
+
         public int GKval { get; set; }
 
         public int STval { get; set; }

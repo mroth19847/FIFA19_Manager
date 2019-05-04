@@ -28,6 +28,7 @@ namespace FIFA19_Manager
                 using (StreamReader sr = new StreamReader("./data.csv"))
                 {
                     string line = sr.ReadLine();
+
                     while ((line = sr.ReadLine()) != null)
                     {
                         string[] parts = line.Split(',');
@@ -38,6 +39,7 @@ namespace FIFA19_Manager
                             Name = parts[2],
                             PhotoURL = parts[4],
                             Nationality = parts[5],
+                            Club = parts[9],
                             Overall = getPositionValue(parts[7]),
                             STval = getPositionValue(parts[30]),
                             LSval = getPositionValue(parts[29]),
@@ -84,16 +86,21 @@ namespace FIFA19_Manager
         }
 
         public void filter(string name, string nation, string club)
-        { 
-
-        }
-
-        public void reset()
         {
-
+            filtered.Clear();
+            foreach (Player pl in players)
+            {
+                if (pl.Name.ToLower().Contains(name.ToLower()) &&
+                   pl.Club.ToLower().Contains(club.ToLower()) &&
+                   pl.Nationality.ToLower().Contains(nation.ToLower()))
+                {
+                    filtered.Add(pl);
+                }
+            }
+            update();
         }
 
-        public void update()
+        private void update()
         {
             ListB.BeginUpdate();
             ListB.Items.Clear();
