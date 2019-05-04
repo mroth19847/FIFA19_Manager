@@ -18,6 +18,10 @@ namespace FIFA19_Manager
         private Player selected;
         private PlayerBL bl;
 
+        /// <summary>
+        /// In the constructor, a new "PlayerBL" object is created and the load function for reading in the
+        /// players is called. If the file is not found and error message is displayed.
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
@@ -32,36 +36,66 @@ namespace FIFA19_Manager
 
         }
 
+        /// <summary>
+        /// The add button event is for adding the currently selected player to a specific location (textBox).
+        /// </summary>
         private void btAdd_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// The match button event opens a new form, where you can select two created teams. After that, a match
+        /// is simulated.
+        /// </summary>
         private void btMatch_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// The create button event checks if any positions are empty. If there are some empty ones, an error message
+        /// is displayed. After checking an input window is opened, where the user is able to input the name of the
+        /// team. Then the team is stored into a database.
+        /// </summary>
         private void btCreate_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// This event is for filtering the ListBox. It calls the "filter" function in the bl.
+        /// </summary>
         private void btName_TextChanged(object sender, EventArgs e)
         {
             bl.filter(tfName.Text, tfNation.Text, tfClub.Text);
         }
 
+        /// <summary>
+        /// This event is for filtering the ListBox. It calls the "filter" function in the bl.
+        /// </summary>
         private void btNation_TextChanged(object sender, EventArgs e)
         {
             bl.filter(tfName.Text, tfNation.Text, tfClub.Text);
         }
 
+        /// <summary>
+        /// This event is for filtering the ListBox. It calls the "filter" function in the bl.
+        /// </summary>
         private void btClub_TextChanged(object sender, EventArgs e)
         {
             bl.filter(tfName.Text, tfNation.Text, tfClub.Text);
         }
 
+        /// <summary>
+        /// The index changed event is for displaying information about a player. After the currently selected player
+        /// is stored in the "selected" attribute, the program tries to put the images of the player and the club
+        /// into the pictureBoxes. If they were not downloaded yet, a webclient downloads them and stores them into the
+        /// "Downloads" folder. If there was a picture of the player or the club in the internet, the program sets it
+        /// for the pictureBox, if there wasn't, a "404 Not Found" picture is displayed instead.
+        /// The function also displays information about the name, nationality and overall score of the player. Depending
+        /// on the overall score, the backgroundcolor of the PlayerPanel changes.
+        /// </summary>
         private void liPlayer_SelectedIndexChanged(object sender, EventArgs e)
         {
             selected = bl.getPlayerAtIndex(liPlayer.SelectedIndex);
@@ -116,6 +150,10 @@ namespace FIFA19_Manager
             }
         }
 
+        /// <summary>
+        /// The function makes a copy of a image and returns it as a bitmap. In this way, the image is not directly
+        /// used by the program.
+        /// </summary>
         private Image GetCopyImage(string path)
         {
             using (Image im = Image.FromFile(path))
@@ -125,6 +163,11 @@ namespace FIFA19_Manager
             }
         }
 
+        /// <summary>
+        /// In order to save disk space, the "Downloads" folder is cleared when closing the form. Due to the fact that
+        /// only copies of the pictures are used in the pictureBoxes, the program can simply access the images and
+        /// delete them.
+        /// </summary>
         private void DeletePictures(object sender, FormClosingEventArgs e)
         {
             picture.Image = null;

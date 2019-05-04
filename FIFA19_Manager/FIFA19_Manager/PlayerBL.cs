@@ -14,16 +14,28 @@ namespace FIFA19_Manager
         private List<Player> filtered = new List<Player>();
         private ListBox ListB;
 
+        /// <summary>
+        /// The constructor includes a ListBox parameter, which is essential for refreshing the list after
+        /// loading or filtering the players.
+        /// </summary>
         public PlayerBL(ListBox listB)
         {
             this.ListB = listB;
         }
 
+        /// <summary>
+        /// The function returns the player of a specific index.
+        /// The function is necessary for displaying information about a player.
+        /// </summary>
         public Player getPlayerAtIndex(int i)
         {
             return filtered[i];
         }
 
+        /// <summary>
+        /// The function loads data from a csv file. For each line, player object is created
+        /// with the essential information and stored in the "players" and the "filtered" list.
+        /// </summary>
         public void load()
         {
             try
@@ -78,6 +90,10 @@ namespace FIFA19_Manager
             }
         }
 
+        /// <summary>
+        /// For some reason, the scores on the positions of the players are badly formatted. This
+        /// function return the integer value for a string including the badly formatted score.
+        /// </summary>
         private int getPositionValue(string pos)
         {
             if (pos.Equals(""))
@@ -91,6 +107,11 @@ namespace FIFA19_Manager
             return Convert.ToInt32(pos);
         }
 
+        /// <summary>
+        /// This function edits the "filtered" list. It is called in from the GUI. After checking if the
+        /// information given in the parameters is contained in an object, it is added to the "filtered"
+        /// list.
+        /// </summary>
         public void filter(string name, string nation, string club)
         {
             filtered.Clear();
@@ -106,6 +127,9 @@ namespace FIFA19_Manager
             update();
         }
 
+        /// <summary>
+        /// The "update" function is for refreshing the ListBox, which is stored as a global attribute.
+        /// </summary>
         private void update()
         {
             ListB.BeginUpdate();
