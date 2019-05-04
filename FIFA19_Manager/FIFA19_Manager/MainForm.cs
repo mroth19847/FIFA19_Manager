@@ -13,15 +13,27 @@ namespace FIFA19_Manager
     public partial class MainForm : Form
     {
 
-        private PlayerBL bl = new PlayerBL();
+        private PlayerBL bl;
 
         public MainForm()
         {
             InitializeComponent();
-            bl.load();
+            bl = new PlayerBL(liPlayer);
+            try
+            {
+                bl.load();
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btMatch_Click(object sender, EventArgs e)
         {
 
         }

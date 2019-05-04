@@ -1,4 +1,6 @@
-﻿namespace FIFA19_Manager
+﻿using System.Windows.Forms;
+
+namespace FIFA19_Manager
 {
     partial class MainForm
     {
@@ -81,6 +83,7 @@
             this.btMatch.TabIndex = 47;
             this.btMatch.Text = "Match =>";
             this.btMatch.UseVisualStyleBackColor = true;
+            this.btMatch.Click += new System.EventHandler(this.btMatch_Click);
             // 
             // btCreate
             // 
@@ -460,7 +463,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1666, 959);
+            this.ClientSize = new System.Drawing.Size(827, 467);
             this.Controls.Add(this.lbNationality);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbOverall);
@@ -479,7 +482,11 @@
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.liPlayer);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FIFA 19 Manager";
             ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nation)).EndInit();
@@ -487,7 +494,12 @@
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
+            this.Width = 853;
+            this.Height = 538;
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         #endregion

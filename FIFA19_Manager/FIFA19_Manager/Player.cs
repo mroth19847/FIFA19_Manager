@@ -16,7 +16,7 @@ namespace FIFA19_Manager
 
         public string Nationality { get; set; }
 
-        public int Overalls { get; set; }
+        public int Overall { get; set; }
 
         public string ClubURL { get; set; }
 
@@ -28,9 +28,7 @@ namespace FIFA19_Manager
 
         public int RSval { get; set; }
 
-        public int ZMLval { get; set; }
-
-        public int ZMRval { get; set; }
+        public int ZMval { get; set; }
 
         public int ZDMval { get; set; }
 
@@ -38,8 +36,11 @@ namespace FIFA19_Manager
 
         public int RVval { get; set; }
 
-        public int IVRval { get; set; }
+        public int IVval { get; set; }
 
-        public int IVLval { get; set; }
+        public override string ToString()
+        {
+            return String.Format("{0}, {1}", Name, Overall);
+        }
     }
 }
