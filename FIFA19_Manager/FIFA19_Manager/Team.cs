@@ -48,7 +48,19 @@ namespace FIFA19_Manager
         /// </summary>
         public void CalcScore()
         {
-
+            int sum = 0;
+            sum += GK.GKval;
+            sum += ST.STval;
+            sum += LS.LSval;
+            sum += RS.RSval;
+            sum += ZMR.ZMval;
+            sum += ZML.ZMval;
+            sum += ZDM.ZDMval;
+            sum += LV.LVval;
+            sum += RV.RVval;
+            sum += IVR.IVval;
+            sum += IVL.IVval;
+            Score = sum;
         }
 
     }

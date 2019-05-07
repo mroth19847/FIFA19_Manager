@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FIFA19_Manager", "FIFA19_Manager\FIFA19_Manager.csproj", "{041579E4-DC6F-437F-9811-3AF9B01AD7AD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FIFA19ManagerTests", "FIFA19ManagerTests\FIFA19ManagerTests.csproj", "{75F98F65-D032-41F3-A33B-BC194A9526A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{041579E4-DC6F-437F-9811-3AF9B01AD7AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{041579E4-DC6F-437F-9811-3AF9B01AD7AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{041579E4-DC6F-437F-9811-3AF9B01AD7AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75F98F65-D032-41F3-A33B-BC194A9526A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75F98F65-D032-41F3-A33B-BC194A9526A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75F98F65-D032-41F3-A33B-BC194A9526A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75F98F65-D032-41F3-A33B-BC194A9526A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
