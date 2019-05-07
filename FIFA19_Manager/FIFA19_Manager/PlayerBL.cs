@@ -18,27 +18,32 @@ namespace FIFA19_Manager
         private ListBox ListB;
 
         /// <summary>
-        /// The function sets a specific player at a specific position in the team.
+        /// The function sets a specific player at a specific position in the team, tests if the player is already in the team
+        /// and removes players from the team if another player is set on his position.
         /// </summary>
         /// <param name="pl"></param>
         /// <param name="pos"></param>
         public void setPlayerOnPosition(Player pl, Position pos)
         {
+            if(!currentTeam.checkIfPlayerIsAvailable(pl)) throw new Exception("You can't use one player for more positions! To change the position of this player, you have to set a player for his position, then you can use him again!");
+
             switch (pos)
             {
-                case Position.GK: currentTeam.GK = pl; break;
-                case Position.RV: currentTeam.RV = pl; break;
-                case Position.IVR: currentTeam.IVR = pl; break;
-                case Position.IVL: currentTeam.IVL = pl; break;
-                case Position.LV: currentTeam.LV = pl; break;
-                case Position.ZDM: currentTeam.ZDM = pl; break;
-                case Position.ZMR: currentTeam.ZMR = pl; break;
-                case Position.ZML: currentTeam.ZML = pl; break;
-                case Position.RS: currentTeam.RS = pl; break;
-                case Position.ST: currentTeam.ST = pl; break;
-                case Position.LS: currentTeam.LS = pl; break;
+                case Position.GK: currentTeam.removePlayer(currentTeam.GK); currentTeam.GK = pl; break;
+                case Position.RV: currentTeam.removePlayer(currentTeam.RV); currentTeam.RV = pl; break;
+                case Position.IVR: currentTeam.removePlayer(currentTeam.IVR); currentTeam.IVR = pl; break;
+                case Position.IVL: currentTeam.removePlayer(currentTeam.IVL); currentTeam.IVL = pl; break;
+                case Position.LV: currentTeam.removePlayer(currentTeam.LV); currentTeam.LV = pl; break;
+                case Position.ZDM: currentTeam.removePlayer(currentTeam.ZDM); currentTeam.ZDM = pl; break;
+                case Position.ZMR: currentTeam.removePlayer(currentTeam.ZMR); currentTeam.ZMR = pl; break;
+                case Position.ZML: currentTeam.removePlayer(currentTeam.ZML); currentTeam.ZML = pl; break;
+                case Position.RS: currentTeam.removePlayer(currentTeam.RS); currentTeam.RS = pl; break;
+                case Position.ST: currentTeam.removePlayer(currentTeam.ST); currentTeam.ST = pl; break;
+                case Position.LS: currentTeam.removePlayer(currentTeam.LS); currentTeam.LS = pl; break;
                 default: throw new Exception("Position not found!");
             }
+
+            currentTeam.addPlayer(pl);
         }
 
         /// <summary>

@@ -19,6 +19,41 @@ namespace FIFA19_Manager
 
         public int Score { get; set; }
 
+        private List<Player> allPlayers = new List<Player>();
+
+        /// <summary>
+        /// Adds a player to the list.
+        /// </summary>
+        /// <param name="pl"></param>
+        public void addPlayer(Player pl)
+        {
+            allPlayers.Add(pl);
+        }
+
+        /// <summary>
+        /// Removes a player from the list.
+        /// </summary>
+        /// <param name="pl"></param>
+        public void removePlayer(Player pl)
+        {
+            allPlayers.Remove(pl);
+        }
+
+        /// <summary>
+        /// Goes through all players and checks if the player is already used.
+        /// </summary>
+        /// <param name="pl"></param>
+        /// <returns></returns>
+        public bool checkIfPlayerIsAvailable(Player pl)
+        {
+            foreach (Player player in allPlayers)
+            {
+                if (pl.Equals(player)) return false;
+            }
+            return true;
+        }
+
+
         public Player GK { get; set; }
 
         public Player ST { get; set; }

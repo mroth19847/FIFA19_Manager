@@ -17,6 +17,7 @@ namespace FIFA19_Manager
 
         private Player selected;
         private PlayerBL bl;
+        private PositionBox selectedTF;
 
         /// <summary>
         /// In the constructor, a new "PlayerBL" object is created and the load function for reading in the
@@ -43,7 +44,18 @@ namespace FIFA19_Manager
         /// <param name="e"></param>
         private void btAdd_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                bl.setPlayerOnPosition(selected, selectedTF.Pos);
+                selectedTF.Text = selected.Name;
+                
+            } catch (ArgumentNullException)
+            {
+                MessageBox.Show("You have to select a player and a position before you can add!");
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         /// <summary>
@@ -67,6 +79,17 @@ namespace FIFA19_Manager
         private void btCreate_Click(object sender, EventArgs e)
         {
 
+        }
+
+        /// <summary>
+        /// The focus entered event is triggered by all positionboxes. When the event is called, the sender is set as
+        /// the selectedTF.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tfPositions_FocusEntered(object sender, EventArgs e)
+        {
+            selectedTF = (PositionBox)sender;
         }
 
         /// <summary>
