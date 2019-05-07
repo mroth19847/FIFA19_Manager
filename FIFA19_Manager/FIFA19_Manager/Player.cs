@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace FIFA19_Manager
 {
+    /// <summary>
+    /// The Player class stores the individual ID and the name of a player. Additionally, urls to pictures
+    /// and information like nationality and club is included. There is also a score for each position, in order
+    /// to know how well the player plays on the different positions.
+    /// </summary>
     public class Player
     {
         public int ID { get; set; }

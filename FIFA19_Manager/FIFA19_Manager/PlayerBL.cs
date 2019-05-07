@@ -18,6 +18,7 @@ namespace FIFA19_Manager
         /// The constructor includes a ListBox parameter, which is essential for refreshing the list after
         /// loading or filtering the players.
         /// </summary>
+        /// <param name="listB"></param>
         public PlayerBL(ListBox listB)
         {
             this.ListB = listB;
@@ -27,6 +28,8 @@ namespace FIFA19_Manager
         /// The function returns the player of a specific index.
         /// The function is necessary for displaying information about a player.
         /// </summary>
+        /// <param name="i"></param>
+        /// <returns> Returns a Player object</returns>
         public Player getPlayerAtIndex(int i)
         {
             return filtered[i];
@@ -94,6 +97,8 @@ namespace FIFA19_Manager
         /// For some reason, the scores on the positions of the players are badly formatted. This
         /// function return the integer value for a string including the badly formatted score.
         /// </summary>
+        /// <param name="pos"></param>
+        /// <returns>Returns an integer</returns>
         private int getPositionValue(string pos)
         {
             if (pos.Equals(""))
@@ -112,6 +117,9 @@ namespace FIFA19_Manager
         /// information given in the parameters is contained in an object, it is added to the "filtered"
         /// list.
         /// </summary>
+        /// <param name="name"></param>
+        /// <param name="nation"></param>
+        /// <param name="club"></param>
         public void filter(string name, string nation, string club)
         {
             filtered.Clear();

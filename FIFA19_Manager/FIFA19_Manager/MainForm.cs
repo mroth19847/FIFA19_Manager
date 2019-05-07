@@ -39,6 +39,8 @@ namespace FIFA19_Manager
         /// <summary>
         /// The add button event is for adding the currently selected player to a specific location (textBox).
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btAdd_Click(object sender, EventArgs e)
         {
 
@@ -48,6 +50,8 @@ namespace FIFA19_Manager
         /// The match button event opens a new form, where you can select two created teams. After that, a match
         /// is simulated.
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btMatch_Click(object sender, EventArgs e)
         {
 
@@ -58,6 +62,8 @@ namespace FIFA19_Manager
         /// is displayed. After checking an input window is opened, where the user is able to input the name of the
         /// team. Then the team is stored into a database.
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btCreate_Click(object sender, EventArgs e)
         {
 
@@ -66,6 +72,8 @@ namespace FIFA19_Manager
         /// <summary>
         /// This event is for filtering the ListBox. It calls the "filter" function in the bl.
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btName_TextChanged(object sender, EventArgs e)
         {
             bl.filter(tfName.Text, tfNation.Text, tfClub.Text);
@@ -74,6 +82,8 @@ namespace FIFA19_Manager
         /// <summary>
         /// This event is for filtering the ListBox. It calls the "filter" function in the bl.
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btNation_TextChanged(object sender, EventArgs e)
         {
             bl.filter(tfName.Text, tfNation.Text, tfClub.Text);
@@ -82,6 +92,8 @@ namespace FIFA19_Manager
         /// <summary>
         /// This event is for filtering the ListBox. It calls the "filter" function in the bl.
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btClub_TextChanged(object sender, EventArgs e)
         {
             bl.filter(tfName.Text, tfNation.Text, tfClub.Text);
@@ -96,6 +108,8 @@ namespace FIFA19_Manager
         /// The function also displays information about the name, nationality and overall score of the player. Depending
         /// on the overall score, the backgroundcolor of the PlayerPanel changes.
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void liPlayer_SelectedIndexChanged(object sender, EventArgs e)
         {
             selected = bl.getPlayerAtIndex(liPlayer.SelectedIndex);
@@ -154,6 +168,8 @@ namespace FIFA19_Manager
         /// The function makes a copy of a image and returns it as a bitmap. In this way, the image is not directly
         /// used by the program.
         /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
         private Image GetCopyImage(string path)
         {
             using (Image im = Image.FromFile(path))
@@ -168,6 +184,8 @@ namespace FIFA19_Manager
         /// only copies of the pictures are used in the pictureBoxes, the program can simply access the images and
         /// delete them.
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DeletePictures(object sender, FormClosingEventArgs e)
         {
             picture.Image = null;
