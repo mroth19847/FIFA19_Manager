@@ -8,11 +8,38 @@ using System.Windows.Forms;
 
 namespace FIFA19_Manager
 {
+    public enum Position { GK, RV, IVR, IVL, LV, ZDM, ZMR, ZML, RS, LS, ST };
+
     public class PlayerBL
     {
         private List<Player> players = new List<Player>();
         private List<Player> filtered = new List<Player>();
+        private Team currentTeam = new Team();
         private ListBox ListB;
+
+        /// <summary>
+        /// The function sets a specific player at a specific position in the team.
+        /// </summary>
+        /// <param name="pl"></param>
+        /// <param name="pos"></param>
+        public void setPlayerOnPosition(Player pl, Position pos)
+        {
+            switch (pos)
+            {
+                case Position.GK: currentTeam.GK = pl; break;
+                case Position.RV: currentTeam.RV = pl; break;
+                case Position.IVR: currentTeam.IVR = pl; break;
+                case Position.IVL: currentTeam.IVL = pl; break;
+                case Position.LV: currentTeam.LV = pl; break;
+                case Position.ZDM: currentTeam.ZDM = pl; break;
+                case Position.ZMR: currentTeam.ZMR = pl; break;
+                case Position.ZML: currentTeam.ZML = pl; break;
+                case Position.RS: currentTeam.RS = pl; break;
+                case Position.ST: currentTeam.ST = pl; break;
+                case Position.LS: currentTeam.LS = pl; break;
+                default: throw new Exception("Position not found!");
+            }
+        }
 
         /// <summary>
         /// The constructor includes a ListBox parameter, which is essential for refreshing the list after
