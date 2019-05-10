@@ -57,6 +57,15 @@ namespace FIFA19_Manager
         }
 
         /// <summary>
+        /// This function is a getter for the team which is currently built.
+        /// </summary>
+        /// <returns></returns>
+        public Team getCurrentTeam()
+        {
+            return currentTeam;
+        }
+
+        /// <summary>
         /// The function returns the player of a specific index.
         /// The function is necessary for displaying information about a player.
         /// </summary>

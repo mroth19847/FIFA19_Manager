@@ -18,6 +18,7 @@ namespace FIFA19_Manager
         private Player selected;
         private PlayerBL bl;
         private PositionBox selectedTF;
+        public string TeamName { get; set; }
 
         /// <summary>
         /// In the constructor, a new "PlayerBL" object is created and the load function for reading in the
@@ -78,7 +79,17 @@ namespace FIFA19_Manager
         /// <param name="e"></param>
         private void btCreate_Click(object sender, EventArgs e)
         {
-
+            Team team = bl.getCurrentTeam();
+            try
+            {
+                //team.CheckIfComplete();
+                InputForm form = new InputForm(this);
+                form.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         /// <summary>

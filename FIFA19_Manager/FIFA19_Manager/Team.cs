@@ -19,8 +19,37 @@ namespace FIFA19_Manager
 
         public int Score { get; set; }
 
+        public Player GK { get; set; }
+
+        public Player ST { get; set; }
+
+        public Player LS { get; set; }
+
+        public Player RS { get; set; }
+
+        public Player ZMR { get; set; }
+
+        public Player ZML { get; set; }
+
+        public Player ZDM { get; set; }
+
+        public Player LV { get; set; }
+
+        public Player RV { get; set; }
+
+        public Player IVR { get; set; }
+
+        public Player IVL { get; set; }
+
         private List<Player> allPlayers = new List<Player>();
 
+        public void CheckIfComplete()
+        {
+            if(allPlayers.Count < 11)
+            {
+                throw new Exception("There are empty positions left!");
+            }
+        }
         /// <summary>
         /// Adds a player to the list.
         /// </summary>
@@ -52,29 +81,6 @@ namespace FIFA19_Manager
             }
             return true;
         }
-
-
-        public Player GK { get; set; }
-
-        public Player ST { get; set; }
-
-        public Player LS { get; set; }
-
-        public Player RS { get; set; }
-
-        public Player ZMR { get; set; }
-
-        public Player ZML { get; set; }
-
-        public Player ZDM { get; set; }
-
-        public Player LV { get; set; }
-
-        public Player RV { get; set; }
-
-        public Player IVR { get; set; }
-
-        public Player IVL { get; set; }
 
 
         /// <summary>
