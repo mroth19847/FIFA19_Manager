@@ -71,7 +71,6 @@ namespace FIFA19_Manager
                 {
                     con.Open();
                     var reader = cmd.ExecuteReader();
-                    con.Close();
                     while (reader.Read())
                     {
                         Team t = new Team { ID = Convert.ToInt32(reader["TeamID"]),
@@ -95,6 +94,7 @@ namespace FIFA19_Manager
                         teams.Add(t);
                     }
                     reader.Close();
+                    con.Close();
                 }
                 return teams;
             }

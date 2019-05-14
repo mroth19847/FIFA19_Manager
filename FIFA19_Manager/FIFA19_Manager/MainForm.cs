@@ -67,7 +67,8 @@ namespace FIFA19_Manager
         /// <param name="e"></param>
         private void btMatch_Click(object sender, EventArgs e)
         {
-
+            MatchForm form = new MatchForm();
+            form.Show();
         }
 
         /// <summary>
