@@ -71,6 +71,24 @@ namespace FIFA19_Manager
         }
 
         /// <summary>
+        ///  The function is called to store the team in the database.
+        /// </summary>
+        public void storeTeam()
+        {
+            try
+            {
+                Team team = bl.getCurrentTeam();
+                team.Name = TeamName;
+                team.CalcScore();
+                DataBaseManager.addTeam(team);
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        /// <summary>
         /// The create button event checks if any positions are empty. If there are some empty ones, an error message
         /// is displayed. After checking an input window is opened, where the user is able to input the name of the
         /// team. Then the team is stored into a database.
@@ -82,7 +100,7 @@ namespace FIFA19_Manager
             Team team = bl.getCurrentTeam();
             try
             {
-                //team.CheckIfComplete();
+                team.CheckIfComplete();
                 InputForm form = new InputForm(this);
                 form.Show();
             }

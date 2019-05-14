@@ -22,13 +22,14 @@ namespace FIFA19_Manager
 
         private void btSave_Click(object sender, EventArgs e)
         {
-            if (tfName.Text.Length < 5 || tfName.Text.Length > 30)
+            if (tfName.Text.Length > 2 && tfName.Text.Length < 30)
             {
                 form.TeamName = tfName.Text;
+                form.storeTeam();
             }
             else
             {
-                MessageBox.Show("The text has to be between 5 and 30 letters long.");
+                MessageBox.Show("The text has to be between 2 and 30 letters long.");
             }
             this.Dispose();
         }

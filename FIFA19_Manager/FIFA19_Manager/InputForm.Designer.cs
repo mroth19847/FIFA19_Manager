@@ -1,4 +1,6 @@
-﻿namespace FIFA19_Manager
+﻿using System.Windows.Forms;
+
+namespace FIFA19_Manager
 {
     partial class InputForm
     {
@@ -85,6 +87,10 @@
             this.Text = "Input Team Name";
             this.ResumeLayout(false);
             this.PerformLayout();
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
 
         }
 
