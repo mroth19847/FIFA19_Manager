@@ -118,7 +118,9 @@ namespace FIFA19_Manager
         /// <param name="e"></param>
         private void tfPositions_FocusEntered(object sender, EventArgs e)
         {
+            if (selectedTF != null) selectedTF.BackColor = Color.White;
             selectedTF = (PositionBox)sender;
+            selectedTF.BackColor = Color.Orange;
         }
 
         /// <summary>

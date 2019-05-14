@@ -10,6 +10,10 @@ namespace FIFA19_Manager
 {
     public class DataBaseManager
     {
+        /// <summary>
+        /// For the beginning the username and password are written down in plain text, if more time remains,
+        /// I will implement more security later
+        /// </summary>
         private static string conStrSQL = "Data Source=mrrothmssql.database.windows.net;" +
                            "Initial Catalog=FIFA19Manager;" +
                            "User ID=mrooth;" +
