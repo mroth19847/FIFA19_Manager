@@ -41,6 +41,12 @@ namespace FIFA19_Manager
 
         public Player IVL { get; set; }
 
+        public int Won { get; set; }
+
+        public int Lost { get; set; }
+
+        public int Draw { get; set; }
+
         private List<Player> allPlayers = new List<Player>();
 
         public void CheckIfComplete()

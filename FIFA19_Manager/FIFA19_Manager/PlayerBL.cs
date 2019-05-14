@@ -12,7 +12,7 @@ namespace FIFA19_Manager
 
     public class PlayerBL
     {
-        private List<Player> players = new List<Player>();
+        private static List<Player> players = new List<Player>();
         private List<Player> filtered = new List<Player>();
         private Team currentTeam = new Team();
         private ListBox ListB;
@@ -188,6 +188,25 @@ namespace FIFA19_Manager
                 ListB.Items.Add(pl);
             }
             ListB.EndUpdate();
+        }
+
+        /// <summary>
+        /// The function returns a player object using the id. It is used to build up the team objects after
+        /// reading the data from the database.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static Player getPlayerObject(object id)
+        {
+            int id1 = Convert.ToInt32(id);
+            foreach (Player player in players)
+            {
+                if(player.ID == id1)
+                {
+                    return player;
+                }
+            }
+            throw new Exception("Player not found!");
         }
 
     }
