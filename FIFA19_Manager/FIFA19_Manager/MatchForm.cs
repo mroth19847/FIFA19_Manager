@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -82,6 +83,7 @@ namespace FIFA19_Manager
         private void btStart_Click(object sender, EventArgs e)
         {
             Match match = new Match { Team1 = t1, Team2 = t2, OutputBox = taOutput };
+            Thread thread = new Thread(new ThreadStart(match.Simulate));
         }
     }
 }
