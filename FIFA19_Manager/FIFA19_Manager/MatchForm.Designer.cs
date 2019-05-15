@@ -116,6 +116,7 @@ namespace FIFA19_Manager
             this.btStart.TabIndex = 5;
             this.btStart.Text = "Start";
             this.btStart.UseVisualStyleBackColor = true;
+            this.btStart.Click += new System.EventHandler(this.btStart_Click);
             // 
             // lbVS
             // 
@@ -136,6 +137,7 @@ namespace FIFA19_Manager
             this.tfTeam2.ReadOnly = true;
             this.tfTeam2.Size = new System.Drawing.Size(203, 38);
             this.tfTeam2.TabIndex = 3;
+            this.tfTeam2.Enter += new System.EventHandler(this.tfTeam2_Enter);
             // 
             // tfTeam1
             // 
@@ -145,6 +147,7 @@ namespace FIFA19_Manager
             this.tfTeam1.ReadOnly = true;
             this.tfTeam1.Size = new System.Drawing.Size(203, 38);
             this.tfTeam1.TabIndex = 2;
+            this.tfTeam1.Enter += new System.EventHandler(this.tfTeam2_Enter);
             // 
             // label2
             // 
@@ -273,16 +276,16 @@ namespace FIFA19_Manager
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.liTeams);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MatchForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Match Simulation";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.StartPosition = FormStartPosition.CenterScreen;
 
         }
 
