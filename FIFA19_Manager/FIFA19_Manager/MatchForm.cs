@@ -82,8 +82,9 @@ namespace FIFA19_Manager
         /// <param name="e"></param>
         private void btStart_Click(object sender, EventArgs e)
         {
-            Match match = new Match { Team1 = t1, Team2 = t2, OutputBox = taOutput };
+            Match match = new Match { Team1 = t1, Team2 = t2 };
             Thread thread = new Thread(new ThreadStart(match.Simulate));
+            thread.Start();
         }
     }
 }
