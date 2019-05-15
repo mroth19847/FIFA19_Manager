@@ -103,5 +103,32 @@ namespace FIFA19_Manager
                 throw new Exception("Error occured while trying to access stored teams.");
             }
         }
+
+        /// <summary>
+        /// After a match, this function is called to update the statistics of a team in the database.
+        /// </summary>
+        /// <param name="teamID"></param>
+        /// <param name="won"></param>
+        /// <param name="lost"></param>
+        /// <param name="draw"></param>
+        public static void updateTeam(int teamID, int won, int lost, int draw)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(conStrSQL);
+                List<Team> teams = new List<Team>();
+                string comStr = "UPDATE TeamTable SET Won = '"+won+"', Lost = '"+lost+"', Draw = '"+draw+"' WHERE TeamID = '"+teamID+"'";
+                using (SqlCommand cmd = new SqlCommand(comStr, con))
+                {
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+            catch (SqlException)
+            {
+                throw new Exception("Error occured while trying to update the statistic of a team.");
+            }
+        }
     }
 }

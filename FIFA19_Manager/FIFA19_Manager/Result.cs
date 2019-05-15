@@ -26,5 +26,16 @@ namespace FIFA19_Manager
             if (Score2 > Score1) return Team2;
             return null;
         }
+
+        /// <summary>
+        /// Returns the loset as a team object regarding to the scores.
+        /// </summary>
+        /// <returns></returns>
+        public Team getLoser()
+        {
+            if (Score1 < Score2) return Team1;
+            if (Score2 < Score1) return Team2;
+            return null;
+        }
     }
 }

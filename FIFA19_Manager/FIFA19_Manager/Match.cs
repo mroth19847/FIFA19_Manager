@@ -11,13 +11,24 @@ namespace FIFA19_Manager
 {
     public class Match : Form
     {
-        public Team Team1 { get; set; }
-        public Team Team2 { get; set; }
+        private Team Team1;
+        private Team Team2;
         private TextBox OutputBox;
         private PictureBox ImageBox;
         private Label lbTeam1;
         private Label lbTeam2;
         private Label lbScore;
+        private MatchForm form;
+
+        public Match(Team t1, Team t2, MatchForm form)
+        {
+            this.form = form;
+            Team1 = t1;
+            Team2 = t2;
+            loadForm();
+            this.Show();
+            Simulate();
+        }
 
         /// <summary>
         /// The loadForm() function loads and displays the form.
@@ -29,7 +40,7 @@ namespace FIFA19_Manager
             this.lbTeam1 = new System.Windows.Forms.Label();
             this.lbTeam2 = new System.Windows.Forms.Label();
             this.lbScore = new System.Windows.Forms.Label();
-            //((System.ComponentModel.ISupportInitialize)(this.ImageBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImageBox)).BeginInit();
             this.SuspendLayout();
             // 
             // OutputBox
@@ -93,8 +104,7 @@ namespace FIFA19_Manager
             this.Name = "Match";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Simulation";
-            //((System.ComponentModel.ISupportInitialize)(this.ImageBox)).EndInit();
-            this.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ImageBox)).EndInit();
             this.PerformLayout();
         }
 
@@ -103,12 +113,12 @@ namespace FIFA19_Manager
         /// </summary>
         public void Simulate()
         {
-            loadForm();
-            this.Show();
             ImageBox.Image = Image.FromFile("./SimulationImages/Empty.png");
             OutputBox.Text = "The match has started.";
             lbTeam1.Text = Team1.Name;
             lbTeam2.Text = Team2.Name;
+            this.Refresh();
+            Thread.Sleep(1000);
             Random r = new Random();
             int goalCountT1 = 0, goalCountT2 = 0;
             int side = 0;
@@ -122,9 +132,10 @@ namespace FIFA19_Manager
                     ImageBox.Image = Image.FromFile("./SimulationImages/Halftime.png");
                     refreshScoreBoard(side, goalCountT1, goalCountT2);
                     AppendLine("Halftime!");
+                    this.Refresh();
                     Thread.Sleep(2000);
                 }
-                int rInt = r.Next(0, 8);
+                int rInt = r.Next(0, 6);
                 if (rInt == 0)
                 {
                     Player scorer;
@@ -133,10 +144,11 @@ namespace FIFA19_Manager
                         goalCountT1++;
                         scorer = getScorer(Team1);
                         AppendLine(Team1.Name + ": " + scorer.Name + " has scored.");
-                        rInt = r.Next(1, 3);
+                        rInt = r.Next(1, 4);
                         int h = side + 1;
                         ImageBox.Image = Image.FromFile("./SimulationImages/Goal" + h + "" + rInt + ".png");
                         refreshScoreBoard(side, goalCountT1, goalCountT2);
+                        this.Refresh();
                         Thread.Sleep(1000);
 
                     }
@@ -145,19 +157,25 @@ namespace FIFA19_Manager
                         goalCountT2++;
                         scorer = getScorer(Team2);
                         AppendLine(Team2.Name + ": " + scorer.Name + " has scored.");
-                        rInt = r.Next(1, 3);
+                        rInt = r.Next(1, 4);
                         int h = 1 - side + 1;
                         ImageBox.Image = Image.FromFile("./SimulationImages/Goal" + h + "" + rInt + ".png");
                         refreshScoreBoard(side, goalCountT1, goalCountT2);
+                        this.Refresh();
                         Thread.Sleep(1000);
 
                     }
                 }
                 Thread.Sleep(1000);
                 ImageBox.Image = Image.FromFile("./SimulationImages/Empty.png");
+                this.Refresh();
             }
             AppendLine("The match has ended, the form will close in 3 seconds.");
+            this.Refresh();
+
             Thread.Sleep(3000);
+            this.Dispose();
+            form.setResults(new Result { Score1 = goalCountT1, Team1 = this.Team1, Score2 = goalCountT2, Team2 = this.Team2 });
         }
 
         /// <summary>
@@ -186,7 +204,7 @@ namespace FIFA19_Manager
         private void AppendLine(String str)
         {
             string pre = OutputBox.Text;
-            pre += "\n" + str;
+            pre += " \r\n" + str;
             OutputBox.Text = pre;
         }
 
@@ -201,7 +219,7 @@ namespace FIFA19_Manager
             int score1 = Team1.Score;
             int score2 = Team2.Score;
             int help = score1 + score2;
-            int rInt = r.Next(0, help);
+            int rInt = r.Next(1, help+1);
             if (rInt <= score1) return Team1;
             return Team2;
         }
@@ -215,7 +233,7 @@ namespace FIFA19_Manager
         private Player getScorer(Team team)
         {
             Random r = new Random();
-            int rInt = r.Next(1, 100);
+            int rInt = r.Next(1, 101);
             //Striker: 60%
             //Center: 20%
             //Defense: 19%

@@ -44,6 +44,14 @@ namespace FIFA19_Manager
         private void liTeams_SelectedIndexChanged(object sender, EventArgs e)
         {
             selected = bl.getTeamAt(liTeams.SelectedIndex);
+            updateTextFields();
+        }
+
+        /// <summary>
+        /// The function updates the information textfields next to the list.
+        /// </summary>
+        private void updateTextFields()
+        {
             tfName.Text = selected.Name;
             tfScore.Text = selected.Score.ToString();
             tfWon.Text = selected.Won.ToString();
@@ -82,9 +90,33 @@ namespace FIFA19_Manager
         /// <param name="e"></param>
         private void btStart_Click(object sender, EventArgs e)
         {
-            Match match = new Match { Team1 = t1, Team2 = t2 };
-            Thread thread = new Thread(new ThreadStart(match.Simulate));
-            thread.Start();
+            if (t1 == null || t2 == null)
+            {
+                MessageBox.Show("You have to select the both teams first!");
+            }
+            else
+            {
+                Match match = new Match(t1, t2, this);
+                //Thread thread = new Thread(new ThreadStart(match.Simulate));
+                //thread.Start();
+            }
+        }
+
+        /// <summary>
+        /// The function is called from the Match class when a Match has finished.
+        /// </summary>
+        /// <param name="r"></param>
+        public void setResults(Result r)
+        {
+            try
+            {
+                selected = bl.manageResult(r);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            updateTextFields();
         }
     }
 }
